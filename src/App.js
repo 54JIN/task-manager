@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Login from './Login'
+import CreateAccount from './CreateAccount'
 
 // https://jin-task-manager-e2e0e11982e2.herokuapp.com/users
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
      <Login />
+     <CreateAccount />
     </div>
   );
 }

@@ -3,10 +3,11 @@ import axios from 'axios'
 
 import './Login.css'
 
-class Login extends Component {
+class CreateAccount extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            name: '',
             userName: '',
             password: ''
         }
@@ -16,11 +17,13 @@ class Login extends Component {
     clickHandler = async () => {
         try {
             console.log(process.env.REACT_APP_LINK)
-          const response = await axios.post(`${process.env.REACT_APP_LINK}/users/login`, {
-            // email: this.state.userName,
-            // password: this.state.password
-            email: "fred@example.com",
-            password: "Computer098"
+          const response = await axios.post(`${process.env.REACT_APP_LINK}/users`, {
+            name: this.state.name,
+            email: this.state.userName,
+            password: this.state.password
+            // name: "freddy",
+            // email: "freddy@example.com",
+            // password: "Computer098"
           });
           
           console.log('response')
@@ -38,7 +41,7 @@ class Login extends Component {
     }
 
     render() {
-        const { userName, password } = this.state
+        const { name, userName, password } = this.state
         return(
             <div className='LogIn'>
                 <div className='Header'>
@@ -46,7 +49,8 @@ class Login extends Component {
                     <h1>92° Sunny</h1>
                 </div>
                 <div className='LogIn-Form'>
-                    <h1>Log In</h1>
+                    <h1>Create Account</h1>
+                    <input type="text" placeholder="name" value={name} name='name' onChange={this.handleChange}/>
                     <input type="text" placeholder="Username" value={userName} name='userName' onChange={this.handleChange}/>
                     <input type="text" placeholder="Password" value={password} name='password' onChange={this.handleChange}/>
                     <button onClick={this.clickHandler}>Enter</button>
@@ -56,4 +60,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default CreateAccount
