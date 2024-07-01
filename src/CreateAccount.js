@@ -18,7 +18,7 @@ class CreateAccount extends Component {
         try {
             console.log(process.env.REACT_APP_LINK)
             // console.log(process.env.REACT_APP_LINK)
-          const response = await axios.post(`${process.env.REACT_APP_LINK}/users`, {
+          const response = await axios.post(`https://jin-task-manager-e2e0e11982e2.herokuapp.com/users`, {
             name: this.state.name,
             email: this.state.userName,
             password: this.state.password
