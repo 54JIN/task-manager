@@ -16,6 +16,7 @@ class CreateAccount extends Component {
 
     clickHandler = async () => {
         try {
+            // console.log(process.env.REACT_APP_LINK)
             console.log(process.env.REACT_APP_LINK)
           const response = await axios.post(`${process.env.REACT_APP_LINK}/users`, {
             name: this.state.name,
