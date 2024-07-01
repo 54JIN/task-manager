@@ -17,10 +17,10 @@ class Login extends Component {
         try {
             console.log(process.env.REACT_APP_LINK)
           const response = await axios.post(`https://jin-task-manager-e2e0e11982e2.herokuapp.com/users/login`, {
-            // email: this.state.userName,
-            // password: this.state.password
-            email: "fred@example.com",
-            password: "Computer098"
+            email: this.state.userName,
+            password: this.state.password
+            // email: "freddy@example.com",
+            // password: "Computer098"
           });
           
           console.log('response')
